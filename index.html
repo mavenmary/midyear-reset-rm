@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mid Year Reset Worksheet — RETAILMavens</title>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#0B4D7C;
+  --navy-dark:#083960;
+  --navy-mid:#1a6a9a;
+  --navy-light:#E8F2FA;
+  --green:#98BD46;
+  --green-dark:#7A9A32;
+  --green-light:#F2F8E6;
+  --cream:#F9F6F0;
+  --warm:#EDE8DF;
+  --dark:#1A1A2E;
+  --gray:#5a5a6e;
+  --white:#fff;
+  --gothic:"Century Gothic","Trebuchet MS","Gill Sans MT","Gill Sans",Calibri,sans-serif;
+  --lobster:"Lobster",cursive;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--gothic);color:var(--dark);background:var(--cream);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes shimmer{0%{background-position:-200% center}100%{background-position:200% center}}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .65s ease,transform .65s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.lobster{font-family:var(--lobster);font-weight:400!important;letter-spacing:.01em}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:.9rem 2rem;display:flex;align-items:center;justify-content:space-between;transition:background .3s,box-shadow .3s}
+nav.scrolled{background:rgba(8,57,96,.97);box-shadow:0 2px 20px rgba(0,0,0,.22)}
+.nav-brand{font-family:var(--gothic);font-size:1rem;font-weight:700;color:#fff;letter-spacing:.08em;text-transform:uppercase;text-decoration:none}
+.nav-cta{background:var(--green);color:#fff;padding:.5rem 1.4rem;border-radius:6px;font-size:.78rem;font-weight:700;text-decoration:none;letter-spacing:.06em;text-transform:uppercase;transition:background .2s,transform .15s;white-space:nowrap}
+.nav-cta:hover{background:var(--green-dark);transform:translateY(-1px)}
+
+/* HERO */
+.hero{min-height:100vh;position:relative;display:flex;align-items:center;background:linear-gradient(150deg,var(--navy-dark) 0%,var(--navy) 55%,var(--navy-mid) 100%);overflow:hidden}
+.hero-grid{position:absolute;inset:0;opacity:.04;background-image:linear-gradient(rgba(255,255,255,1) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,1) 1px,transparent 1px);background-size:52px 52px}
+.hero-glow{position:absolute;top:-10%;right:-5%;width:55%;height:80%;background:radial-gradient(ellipse,rgba(152,189,70,.14) 0%,transparent 65%);pointer-events:none}
+.hero-inner{max-width:1160px;margin:0 auto;width:100%;padding:9rem 2rem 5rem;display:grid;grid-template-columns:56% 1fr;gap:5rem;align-items:center;position:relative;z-index:1}
+.hero-eyebrow{display:flex;align-items:center;gap:.55rem;margin-bottom:1.5rem;animation:fadeIn .8s ease both}
+.he-line{display:block;width:28px;height:2px;background:var(--green);flex-shrink:0}
+.he-item{font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.65)}
+.he-sep{font-size:.72rem;color:var(--green);font-weight:700}
+.hero h1{font-family:var(--gothic);font-size:clamp(2.5rem,5.5vw,3.9rem);font-weight:700;color:#fff;line-height:1.1;margin-bottom:1.5rem;animation:fadeUp .8s .1s ease both;letter-spacing:-.01em}
+.hero h1 .accent{font-family:var(--lobster);font-weight:400;background:linear-gradient(90deg,#98BD46,#c8e870,#98BD46);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 4s linear infinite}
+.hero-sub{font-size:1rem;color:rgba(255,255,255,.76);line-height:1.8;margin-bottom:2.2rem;max-width:500px;animation:fadeUp .8s .2s ease both}
+.hero-btns{display:flex;gap:.9rem;flex-wrap:wrap;animation:fadeUp .8s .3s ease both}
+.btn-main{display:inline-flex;align-items:center;gap:.55rem;background:var(--green);color:#fff;padding:.95rem 2.1rem;border-radius:8px;font-size:.88rem;font-weight:700;text-decoration:none;letter-spacing:.04em;text-transform:uppercase;box-shadow:0 6px 24px rgba(152,189,70,.38);transition:all .2s}
+.btn-main:hover{background:var(--green-dark);transform:translateY(-2px);box-shadow:0 10px 30px rgba(152,189,70,.5)}
+.btn-ghost{display:inline-flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.09);color:#fff;padding:.95rem 1.7rem;border-radius:8px;font-size:.88rem;font-weight:700;text-decoration:none;border:1px solid rgba(255,255,255,.18);transition:all .2s}
+.btn-ghost:hover{background:rgba(255,255,255,.16);transform:translateY(-2px)}
+.hero-panel{animation:fadeUp .8s .35s ease both}
+.hcard{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:1.5rem 1.4rem;margin-bottom:.9rem}
+.hcard:last-child{margin-bottom:0}
+.hcard-label{font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.42);margin-bottom:.65rem}
+.hcard-body{font-size:.88rem;color:#fff;font-weight:600;line-height:1.65}
+.hcard-body strong{color:#c4df82}
+.pills{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.75rem}
+.pill{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.09);border-radius:20px;padding:.32rem .9rem;font-size:.73rem;font-weight:700;color:rgba(255,255,255,.86);display:flex;align-items:center;gap:.4rem}
+.pill-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+.hcard-quote{font-size:.86rem;color:rgba(255,255,255,.68);font-style:italic;line-height:1.7}
+
+/* H1 H2 EXPLAINER STRIP */
+.hh-strip{background:var(--navy-dark);border-top:1px solid rgba(255,255,255,.06);padding:.85rem 2rem}
+.hh-inner{max-width:1160px;margin:0 auto;display:flex;align-items:center;gap:2.5rem;flex-wrap:wrap}
+.hh-label{font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.35);white-space:nowrap}
+.hh-items{display:flex;gap:2rem;flex-wrap:wrap}
+.hh-item{display:flex;align-items:center;gap:.7rem}
+.hh-badge{background:var(--green);color:#fff;font-size:.65rem;font-weight:700;letter-spacing:.07em;padding:.25rem .65rem;border-radius:4px;white-space:nowrap}
+.hh-desc{font-size:.78rem;color:rgba(255,255,255,.6);font-weight:600}
+.hh-sep{color:rgba(255,255,255,.15);font-size:1rem}
+
+/* SECTION BASE */
+section{padding:6rem 2rem}
+.inner{max-width:1160px;margin:0 auto}
+.eyebrow{font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--green);margin-bottom:.8rem}
+.s-title{font-family:var(--gothic);font-size:clamp(1.85rem,4vw,2.8rem);font-weight:700;color:var(--navy);line-height:1.14;margin-bottom:1rem;letter-spacing:-.01em}
+.s-title .accent{font-family:var(--lobster);font-weight:400;color:var(--green)}
+.s-sub{font-size:.95rem;color:var(--gray);line-height:1.82;max-width:580px}
+
+/* SYSTEMS */
+.sys-section{background:var(--white)}
+.sys-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1rem;margin-top:3.5rem}
+.sys-card{background:var(--cream);border-radius:14px;padding:1.6rem 1.3rem;border:1px solid var(--warm);transition:all .25s;position:relative;overflow:hidden}
+.sys-card::after{content:"";position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--navy);transform:scaleX(0);transition:transform .3s;transform-origin:left}
+.sys-card:hover{transform:translateY(-5px);box-shadow:0 14px 36px rgba(11,77,124,.1);border-color:rgba(11,77,124,.2)}
+.sys-card:hover::after{transform:scaleX(1)}
+.sys-num{font-family:var(--lobster);font-size:2.6rem;font-weight:400;color:var(--warm);line-height:1;margin-bottom:.65rem;transition:color .25s}
+.sys-card:hover .sys-num{color:rgba(11,77,124,.18)}
+.sys-name{font-size:.78rem;font-weight:700;color:var(--navy);margin-bottom:.5rem;text-transform:uppercase;letter-spacing:.07em}
+.sys-desc{font-size:.78rem;color:var(--gray);line-height:1.68}
+
+/* OUTCOMES — no icons, clean numbered left-border style */
+.out-section{background:var(--navy);position:relative;overflow:hidden}
+.out-section::before{content:"";position:absolute;inset:0;opacity:.03;background-image:linear-gradient(rgba(255,255,255,1) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,1) 1px,transparent 1px);background-size:40px 40px}
+.out-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:3.5rem;position:relative;background:rgba(255,255,255,.07);border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.09)}
+.out-card{background:rgba(11,61,96,.6);padding:2rem 1.8rem;transition:background .2s;position:relative}
+.out-card:hover{background:rgba(255,255,255,.08)}
+.out-num{font-family:var(--lobster);font-size:3rem;font-weight:400;color:rgba(152,189,70,.25);line-height:1;margin-bottom:.9rem;transition:color .25s}
+.out-card:hover .out-num{color:rgba(152,189,70,.4)}
+.out-title{font-size:.88rem;font-weight:700;color:#fff;margin-bottom:.55rem;text-transform:uppercase;letter-spacing:.05em}
+.out-desc{font-size:.8rem;color:rgba(255,255,255,.58);line-height:1.75}
+.out-section .s-title{color:#fff}
+.out-section .s-sub{color:rgba(255,255,255,.65)}
+
+/* QUOTE */
+.quote-strip{background:var(--navy);border-top:1px solid rgba(255,255,255,.06);padding:5rem 2rem}
+.q-inner{max-width:800px;margin:0 auto;text-align:center}
+.q-line{width:48px;height:3px;background:var(--green);margin:0 auto 2rem;border-radius:2px}
+.q-text{font-family:var(--lobster);font-size:clamp(1.6rem,3.5vw,2.3rem);font-weight:400;color:#fff;line-height:1.45;margin-bottom:1.4rem}
+.q-attr{font-size:.75rem;font-weight:700;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.09em}
+
+/* HOW IT WORKS */
+.how-section{background:var(--cream)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;margin-top:3.5rem;position:relative}
+.steps::before{content:"";position:absolute;top:26px;left:14%;right:14%;height:1px;background:rgba(11,77,124,.15);z-index:0}
+.step{text-align:center;position:relative;z-index:1}
+.step-n{width:52px;height:52px;border-radius:50%;background:var(--navy);color:#fff;font-family:var(--lobster);font-size:1.3rem;font-weight:400;display:flex;align-items:center;justify-content:center;margin:0 auto 1.1rem;box-shadow:0 4px 18px rgba(11,77,124,.28);transition:all .25s}
+.step:hover .step-n{background:var(--green);transform:scale(1.1)}
+.step-title{font-size:.8rem;font-weight:700;color:var(--navy);margin-bottom:.45rem;text-transform:uppercase;letter-spacing:.06em}
+.step-desc{font-size:.77rem;color:var(--gray);line-height:1.7}
+
+/* CTA BAND */
+.cta-band{background:linear-gradient(140deg,var(--navy-dark) 0%,var(--navy) 100%);text-align:center;position:relative;overflow:hidden;padding:7rem 2rem}
+.cta-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:700px;height:350px;background:radial-gradient(ellipse,rgba(152,189,70,.12) 0%,transparent 70%);pointer-events:none}
+.cta-title{font-family:var(--gothic);font-size:clamp(2rem,4.5vw,3.2rem);font-weight:700;color:#fff;line-height:1.12;margin-bottom:.9rem;letter-spacing:-.01em}
+.cta-title .accent{font-family:var(--lobster);font-weight:400;color:var(--green)}
+.cta-sub{font-size:.95rem;color:rgba(255,255,255,.68);line-height:1.8;max-width:540px;margin:0 auto 2.6rem}
+.btn-cta{display:inline-flex;align-items:center;gap:.6rem;background:var(--green);color:#fff;padding:1.1rem 2.6rem;border-radius:10px;font-size:.92rem;font-weight:700;text-decoration:none;letter-spacing:.05em;text-transform:uppercase;box-shadow:0 6px 26px rgba(152,189,70,.42);transition:all .2s}
+.btn-cta:hover{background:var(--green-dark);transform:translateY(-3px);box-shadow:0 12px 34px rgba(152,189,70,.52)}
+.cta-note{font-size:.74rem;color:rgba(255,255,255,.32);margin-top:1.2rem}
+
+/* FOOTER */
+footer{background:var(--dark);padding:2rem;text-align:center}
+footer p{font-size:.74rem;color:rgba(255,255,255,.28)}
+footer a{color:rgba(255,255,255,.4);text-decoration:none}
+footer a:hover{color:var(--green)}
+
+/* RESPONSIVE */
+.flower-wrap{max-width:480px;width:100%}
+.flower-wrap svg{width:100%;height:auto}
+@media(max-width:1024px){
+  .hero-inner{grid-template-columns:1fr;gap:0}
+  .hero-panel{display:none}
+  .sys-top-grid{grid-template-columns:1fr!important;gap:2rem}
+  .flower-wrap{max-width:360px;margin:0 auto}
+  .sys-grid{grid-template-columns:1fr 1fr}
+  .out-grid{grid-template-columns:1fr 1fr}
+  .steps{grid-template-columns:1fr 1fr;gap:2rem}
+  .steps::before{display:none}
+}
+@media(max-width:680px){
+  section{padding:4rem 1.2rem}
+  .cta-band{padding:5rem 1.2rem}
+  nav{padding:.75rem 1.2rem}
+  .hero-inner{padding:7rem 1.2rem 4rem}
+  .hero h1{font-size:2.3rem}
+  .hero-sub{font-size:.92rem}
+  .hero-btns{flex-direction:column}
+  .btn-main,.btn-ghost{justify-content:center;text-align:center}
+  .sys-grid{grid-template-columns:1fr}
+  .out-grid{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr}
+  .btn-cta{width:100%;max-width:320px;justify-content:center}
+  .hh-items{gap:1rem}
+  .hh-strip{padding:.85rem 1.2rem}
+}
+</style>
+</head>
+<body>
+
+<nav id="mainNav">
+  <a class="nav-brand" href="#">RETAILMavens</a>
+  <a class="nav-cta" href="https://midyear-reset.vercel.app/">Open Worksheet</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-eyebrow">
+  <span class="he-line"></span>
+  <span class="he-item">Mid Year Reset</span>
+  <span class="he-sep">,</span>
+  <span class="he-item">5 Systems</span>
+  <span class="he-sep">,</span>
+  <span class="he-item">1 Tune-Up</span>
+</div>
+      <h1>You Still Have Time<br>to Finish <span class="accent">Strong.</span></h1>
+      <p class="hero-sub">You are at the halfway point. That is not a problem &mdash; it is a gift. This worksheet walks you through all five core systems of your store so you can see exactly where you are, fix what is not working, and own the second half of this year.</p>
+      <div class="hero-btns">
+        <a class="btn-main" href="https://midyear-reset.vercel.app/">
+          Start My Mid Year Reset
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a class="btn-ghost" href="#how">See how it works</a>
+      </div>
+    </div>
+    <div class="hero-panel">
+      <div class="hcard">
+        <div class="hcard-label">What you will walk away with</div>
+        <div class="hcard-body"><strong>Clarity</strong> on where you actually are &nbsp;&middot;&nbsp; <strong>One tweak</strong> per system &nbsp;&middot;&nbsp; A <strong>renewed sense of control</strong> heading into your second half</div>
+      </div>
+      <div class="hcard">
+        <div class="hcard-label">The five systems covered today</div>
+        <div class="pills">
+          <div class="pill"><span class="pill-dot" style="background:#98BD46"></span>Cash Flow</div>
+          <div class="pill"><span class="pill-dot" style="background:#1a8fc0"></span>Inventory</div>
+          <div class="pill"><span class="pill-dot" style="background:#c8973a"></span>Team</div>
+          <div class="pill"><span class="pill-dot" style="background:#e05c5c"></span>Marketing</div>
+          <div class="pill"><span class="pill-dot" style="background:#9b7fd4"></span>Mindset</div>
+        </div>
+      </div>
+      <div class="hcard">
+        <div class="hcard-label">Cathy Donovan Wagner</div>
+        <div class="hcard-quote">"What you inspect improves. Not because of magic, but because attention creates intention."</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- H1 / H2 EXPLAINER -->
+<div class="hh-strip">
+  <div class="hh-inner">
+    <span class="hh-label">Quick glossary</span>
+    <div class="hh-items">
+      <div class="hh-item">
+        <span class="hh-badge">H1</span>
+        <span class="hh-desc">First Half &mdash; January through June</span>
+      </div>
+      <span class="hh-sep">&middot;</span>
+      <div class="hh-item">
+        <span class="hh-badge">H2</span>
+        <span class="hh-desc">Second Half &mdash; July through December</span>
+      </div>
+      <span class="hh-sep">&middot;</span>
+      <div class="hh-item">
+        <span class="hh-desc" style="color:rgba(255,255,255,.4);font-style:italic">Throughout this worksheet you will compare your H1 numbers to last year and build your H2 action plan.</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FIVE SYSTEMS -->
+<section class="sys-section">
+  <div class="inner">
+    <div style="display:grid;grid-template-columns:1fr 480px;gap:4rem;align-items:center" class="sys-top-grid">
+      <div class="reveal">
+        <div class="eyebrow">The Richer Retailer Method</div>
+        <h2 class="s-title">Five Systems.<br>One <span class="accent">Honest</span> Look.</h2>
+        <p class="s-sub">Most store owners white-knuckle through problems instead of stopping to look at what is actually happening. Today we stop and look across all five core systems of your business.</p>
+        <p class="s-sub" style="margin-top:1rem">Each petal of the Richer Retailer Method represents a system of your store. When all five are healthy and aligned, you become a truly Richer Retailer.</p>
+      </div>
+      <div class="reveal flower-wrap"><svg viewBox="0 0 600 615" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The Richer Retailer Method flower diagram showing five systems: Cash Flow, Inventory, Team, Marketing, and Mindset surrounding a Richer Retailer centre">
+  <circle cx="300.00" cy="156.00" r="126" fill="#EDFAE0" stroke="#79A93C" stroke-width="2.5"/>
+  <circle cx="444.56" cy="261.03" r="126" fill="#EDFAE0" stroke="#79A93C" stroke-width="2.5"/>
+  <circle cx="389.34" cy="430.97" r="126" fill="#EDFAE0" stroke="#79A93C" stroke-width="2.5"/>
+  <circle cx="210.66" cy="430.97" r="126" fill="#EDFAE0" stroke="#79A93C" stroke-width="2.5"/>
+  <circle cx="155.44" cy="261.03" r="126" fill="#EDFAE0" stroke="#79A93C" stroke-width="2.5"/>
+
+  <!-- Center circle -->
+  <circle cx="300" cy="308" r="115" fill="#79A93C" stroke="#5c8822" stroke-width="3"/>
+  <circle cx="300" cy="308" r="105" fill="none" stroke="rgba(255,255,255,.22)" stroke-width="1.5"/>
+  <!-- Center labels -->
+  <text x="300" y="295" text-anchor="middle" dominant-baseline="middle" font-family="Lobster,cursive" font-size="27" font-weight="400" fill="#fff">Richer</text>
+  <text x="300" y="323" text-anchor="middle" dominant-baseline="middle" font-family="Lobster,cursive" font-size="27" font-weight="400" fill="#fff">Retailer</text>
+  <!-- Petal labels (outer zone only) -->
+  <text x="300.00" y="95.50" text-anchor="middle" dominant-baseline="middle" font-family="'Century Gothic','Trebuchet MS',sans-serif" font-size="14" font-weight="700" fill="#2d5a14" letter-spacing="0.8">CASH FLOW /</text>
+  <text x="300.00" y="114.50" text-anchor="middle" dominant-baseline="middle" font-family="'Century Gothic','Trebuchet MS',sans-serif" font-size="14" font-weight="700" fill="#2d5a14" letter-spacing="0.8">PROFIT</text>
+  <text x="493.06" y="245.27" text-anchor="middle" dominant-baseline="middle" font-family="'Century Gothic','Trebuchet MS',sans-serif" font-size="14" font-weight="700" fill="#2d5a14" letter-spacing="0.8">INVENTORY</text>
+  <text x="419.32" y="472.23" text-anchor="middle" dominant-baseline="middle" font-family="'Century Gothic','Trebuchet MS',sans-serif" font-size="14" font-weight="700" fill="#2d5a14" letter-spacing="0.8">TEAM</text>
+  <text x="180.68" y="472.23" text-anchor="middle" dominant-baseline="middle" font-family="'Century Gothic','Trebuchet MS',sans-serif" font-size="14" font-weight="700" fill="#2d5a14" letter-spacing="0.8">MARKETING</text>
+  <text x="106.94" y="235.77" text-anchor="middle" dominant-baseline="middle" font-family="'Century Gothic','Trebuchet MS',sans-serif" font-size="14" font-weight="700" fill="#2d5a14" letter-spacing="0.8">MINDSET /</text>
+  <text x="106.94" y="254.77" text-anchor="middle" dominant-baseline="middle" font-family="'Century Gothic','Trebuchet MS',sans-serif" font-size="14" font-weight="700" fill="#2d5a14" letter-spacing="0.8">LEADERSHIP</text>
+
+  <!-- Footer -->
+  <text x="300" y="598" text-anchor="middle" font-family="'Century Gothic',sans-serif" font-size="11" fill="#79A93C" letter-spacing="2.5">RETAILMAVENS.COM</text>
+</svg></div>
+    </div>
+    <div class="sys-grid">
+      <div class="sys-card reveal">
+        <div class="sys-num">01</div>
+        <div class="sys-name">Cash Flow</div>
+        <div class="sys-desc">Are your sales actually translating to cash? Pull your first half numbers, calculate your IMU, and find your number one cash flow lever for the second half.</div>
+      </div>
+      <div class="sys-card reveal">
+        <div class="sys-num">02</div>
+        <div class="sys-name">Inventory</div>
+        <div class="sys-desc">Dead stock is cash trapped in boxes. Assess your turn rate, audit what has been sitting too long, and decide what to cancel, reorder, clear or hold.</div>
+      </div>
+      <div class="sys-card reveal">
+        <div class="sys-num">03</div>
+        <div class="sys-name">Team</div>
+        <div class="sys-desc">You cannot scale alone. Are you leading your team or reacting to it? Measure your meetings, your one on ones, and how much CEO time you actually protect each week.</div>
+      </div>
+      <div class="sys-card reveal">
+        <div class="sys-num">04</div>
+        <div class="sys-name">Marketing</div>
+        <div class="sys-desc">Are you making consistent offers? Audit your email frequency, social CTAs, and messaging clarity to generate the traffic and sales you need in the second half.</div>
+      </div>
+      <div class="sys-card reveal">
+        <div class="sys-num">05</div>
+        <div class="sys-name">Mindset</div>
+        <div class="sys-desc">Data over drama. Are you operating from strategy or scarcity? This is the CEO operating system behind every decision you make inside your store.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT YOU GET -->
+<section class="out-section">
+  <div class="inner">
+    <div class="reveal" style="text-align:center">
+      <div class="eyebrow" style="color:#98BD46">What you will walk away with</div>
+      <h2 class="s-title" style="color:#fff;margin:0 auto .8rem">Not fluff.<br>Just <span class="accent">clarity</span> and a plan.</h2>
+      <p class="s-sub" style="margin:0 auto;text-align:center;color:rgba(255,255,255,.62)">Every section of the worksheet produces something concrete. A number, a decision, or a single committed action you can take in the next 30 days.</p>
+    </div>
+    <div class="out-grid">
+      <div class="out-card reveal">
+        <div class="out-num">01</div>
+        <div class="out-title">Your Richer Retailer Score</div>
+        <div class="out-desc">Rate yourself honestly across all five systems and see an overall score that shows exactly where to put your energy first in the second half.</div>
+      </div>
+      <div class="out-card reveal">
+        <div class="out-num">02</div>
+        <div class="out-title">Your Real IMU Number</div>
+        <div class="out-desc">Calculate your Initial Markup right inside the worksheet. An increase of just two or three points can mean thousands more in profit by year end.</div>
+      </div>
+      <div class="out-card reveal">
+        <div class="out-num">03</div>
+        <div class="out-title">A Dead Stock Action Plan</div>
+        <div class="out-desc">Identify your frozen cash. Every item sitting 90 or more days in your store gets a clear decision: Cancel, Reorder, Clear, or Hold.</div>
+      </div>
+      <div class="out-card reveal">
+        <div class="out-num">04</div>
+        <div class="out-title">Five Committed Tweaks</div>
+        <div class="out-desc">One specific, implementable change per system with a real deadline. Not a list of 20 things to fix. Just five focused moves that will actually happen.</div>
+      </div>
+      <div class="out-card reveal">
+        <div class="out-num">05</div>
+        <div class="out-title">A Personalised Report</div>
+        <div class="out-desc">Your completed worksheet generates a downloadable PDF report. Your second half playbook to refer back to, share with your coach, and act on all year.</div>
+      </div>
+      <div class="out-card reveal">
+        <div class="out-num">06</div>
+        <div class="out-title">CEO Clarity</div>
+        <div class="out-desc">Replace guessing with knowing. Looking at your numbers is an act of leadership and it changes how you show up for everything else in your business.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<section class="quote-strip">
+  <div class="q-inner reveal">
+    <div class="q-line"></div>
+    <p class="q-text">"The first half tells a story. The second half determines the outcome."</p>
+    <div class="q-attr">Cathy Donovan Wagner &nbsp;&middot;&nbsp; RETAILMavens</div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-section" id="how">
+  <div class="inner">
+    <div class="reveal" style="text-align:center">
+      <div class="eyebrow">Simple. Guided. Actionable.</div>
+      <h2 class="s-title" style="margin:0 auto .8rem">How it <span class="accent">works</span></h2>
+      <p class="s-sub" style="margin:0 auto">The worksheet takes about 20 to 30 minutes to complete. Pull your numbers before you start for the best results.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal">
+        <div class="step-n">1</div>
+        <div class="step-title">Enter your info</div>
+        <div class="step-desc">Your store name, email, and the event you are attending. Takes about 30 seconds to get started.</div>
+      </div>
+      <div class="step reveal">
+        <div class="step-n">2</div>
+        <div class="step-title">Work through five systems</div>
+        <div class="step-desc">Each section is fully guided. Pull your real numbers, complete the scorecards, and identify your one key tweak.</div>
+      </div>
+      <div class="step reveal">
+        <div class="step-n">3</div>
+        <div class="step-title">Review your action plan</div>
+        <div class="step-desc">See your complete second half action plan and your overall Richer Retailer Score before you submit.</div>
+      </div>
+      <div class="step reveal">
+        <div class="step-n">4</div>
+        <div class="step-title">Download your report</div>
+        <div class="step-desc">Submit and instantly download your personalised report. Your second half playbook to keep, print, and act on.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="cta-band">
+  <div class="cta-glow"></div>
+  <div style="position:relative;z-index:1;max-width:700px;margin:0 auto">
+    <div class="reveal">
+      <div class="eyebrow" style="color:var(--green);text-align:center">You showed up. That already puts you ahead.</div>
+      <h2 class="cta-title">Ready to <span class="accent">reset?</span></h2>
+      <p class="cta-sub">The mid year reset you are about to do? Most store owners never do this. You will walk away with clarity, a plan, and the tools to finish this year strong.</p>
+      <div style="display:flex;justify-content:center">
+        <a class="btn-cta" href="https://midyear-reset.vercel.app/">
+          Start My Mid Year Reset
+          <svg width="18" height="18" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+      <p class="cta-note">Free for all webinar attendees &nbsp;&middot;&nbsp; Takes 20 to 30 minutes &nbsp;&middot;&nbsp; Your data is private</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2025 RETAILMavens, LLC &nbsp;&middot;&nbsp; <a href="https://retailmavens.com" target="_blank">retailmavens.com</a> &nbsp;&middot;&nbsp; Questions? Reach out to your coach directly.</p>
+</footer>
+
+<script>
+const nav=document.getElementById("mainNav");
+window.addEventListener("scroll",()=>{nav.classList.toggle("scrolled",window.scrollY>60)},{passive:true});
+const io=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add("visible")})},{threshold:0.1,rootMargin:"0px 0px -40px 0px"});
+document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
