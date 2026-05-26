@@ -36,7 +36,7 @@ body{font-family:var(--gothic);color:var(--dark);background:var(--cream);overflo
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:.9rem 2rem;display:flex;align-items:center;justify-content:space-between;transition:background .3s,box-shadow .3s}
 nav.scrolled{background:rgba(8,57,96,.97);box-shadow:0 2px 20px rgba(0,0,0,.22)}
-.nav-brand{font-family:var(--gothic);font-size:1rem;font-weight:700;color:#fff;letter-spacing:.08em;text-transform:uppercase;text-decoration:none}
+.nav-brand{font-family:var(--gothic);font-size:1rem;font-weight:700;color:#fff;letter-spacing:.08em;text-decoration:none}
 .nav-cta{background:var(--green);color:#fff;padding:.5rem 1.4rem;border-radius:6px;font-size:.78rem;font-weight:700;text-decoration:none;letter-spacing:.06em;text-transform:uppercase;transition:background .2s,transform .15s;white-space:nowrap}
 .nav-cta:hover{background:var(--green-dark);transform:translateY(-1px)}
 
@@ -194,6 +194,7 @@ footer a:hover{color:var(--green)}
 
 /* SYS BRAND */
 .sys-brand{font-size:.6rem;color:var(--green);display:block;margin-bottom:.13rem;letter-spacing:.1em;font-weight:700;text-transform:none}
+.brand{text-transform:none}
 
 /* BROWSER MOCKUP */
 .browser-wrap{padding:.2rem}
@@ -483,7 +484,7 @@ footer a:hover{color:var(--green)}
   <div class="q-inner reveal">
     <div class="q-line"></div>
     <p class="q-text">"The first half tells a story. The second half determines the outcome."</p>
-    <div class="q-attr">Cathy Donovan Wagner &nbsp;&middot;&nbsp; RETAILMavens</div>
+    <div class="q-attr">Cathy Donovan Wagner &nbsp;&middot;&nbsp; <span class="brand">RETAILMavens</span></div>
   </div>
 </section>
 
@@ -524,7 +525,7 @@ footer a:hover{color:var(--green)}
 <section class="profit-section" id="profit-club">
   <div class="inner">
     <div class="reveal" style="text-align:center">
-      <div class="eyebrow">Free Bonus &nbsp;&middot;&nbsp; with Krystal from the RETAILMavens team</div>
+      <div class="eyebrow">Free Bonus &nbsp;&middot;&nbsp; with Krystal from the <span class="brand">RETAILMavens</span> team</div>
       <h2 class="s-title" style="margin:0 auto .8rem">FREE BONUS: 15-Minute<br><span class="accent">Mid-Year Review</span> Call</h2>
       <p class="s-sub" style="margin:0 auto">Reach out to your coach directly for support on any of the strategies we covered today.</p>
     </div>
@@ -577,7 +578,7 @@ footer a:hover{color:var(--green)}
 </section>
 
 <footer>
-  <div class="footer-social"><span>@RETAILMavens</span></div>
+  <div class="footer-social"><span class="brand">@RETAILMavens</span></div>
   <p>&copy; 2026 RETAILMavens, LLC &nbsp;&middot;&nbsp; <a href="https://retailmavens.com" target="_blank">retailmavens.com</a> &nbsp;&middot;&nbsp; Questions? Reach out to your coach directly.</p>
 </footer>
 
